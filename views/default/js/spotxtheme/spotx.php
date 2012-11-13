@@ -15,6 +15,17 @@ elgg.provide('elgg.spotxtheme');
 
 // Init
 elgg.spotxtheme.init = function() {
+	// Delegate click handler for welcome tabs click
+	$(document).delegate('.spotx-welcome-menu-item', 'click', elgg.spotxtheme.welcomeTabClick);
+}
+
+// Click handler for welcome tab click
+elgg.spotxtheme.welcomeTabClick = function(event) {
+	$('.spotx-welcome-menu-item').parent().removeClass('elgg-state-selected');
+	$(this).parent().addClass('elgg-state-selected');
+	$('.spotx-welcome-tabs-module').hide();	
+	$($(this).attr('href')).show();
+	event.preventDefault();
 }
 
 elgg.register_hook_handler('init', 'system', elgg.spotxtheme.init);

@@ -20,6 +20,12 @@
 		<version>1.8</version>
 		<comparison>ge</comparison>
 	</requires>
+	<requires>
+		<type>plugin</type>
+		<name>modules</name>
+		<version>1.8</version>
+		<comparison>ge</comparison>
+	</requires>
 	<conflicts>
 		<type>plugin</type>
 		<name>publicdashboard</name>
