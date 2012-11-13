@@ -24,6 +24,7 @@ $english = array(
 	'spotxtheme:label:latestactivity' => 'Latest Activity',
 	'spotxtheme:label:activeforums' => 'Most Active Forums',
 	'spotxtheme:label:activeblogs' => 'Most Active Blogs',
+	'spotxtheme:label:noresults' => 'No Results',
 );
 
 add_translation('en',$english);
