@@ -28,7 +28,8 @@ function spotxtheme_init() {
 	elgg_register_js('elgg.spotxtheme', $sxt_js);
 	elgg_load_js('elgg.spotxtheme');
 	
-	elgg_extend_view('group/default', 'spotxtheme/group_gallery', 1);
+	// Extend admin css
+	elgg_extend_view('css/admin', 'css/spotxtheme/admin');
 	
 	// Set up library
 	elgg_register_library('elgg:spotxtheme', elgg_get_plugins_path() . 'spotxtheme/lib/spotx.php');
