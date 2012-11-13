@@ -31,10 +31,23 @@
 	display: block;
 }
 
-/** Override logo-bottom **/
+/** Override logo **/
 .elgg-main {
 	position: relative;
 	min-height: 360px;
 	padding: 20px 10px 10px 10px;
 	background: url(<?php echo elgg_get_site_url(); ?>mod/spotxtheme/graphics/logo-bottom.png) no-repeat !important;
+}
+
+.elgg-home-right{
+	background:none !important;
+}
+
+.elgg-right-sidebar {
+	position: relative;
+	padding: 20px 10px 10px 10px;
+	float: left;
+	width: 400px;
+	margin: 0 0 10px 0;
+	background:url("<?php echo elgg_get_site_url(); ?>mod/spotxtheme/graphics/logo-bottom.png") no-repeat;
 }
