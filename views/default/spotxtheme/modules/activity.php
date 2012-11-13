@@ -1,6 +1,6 @@
 <?php
 /**
- * SpotX Theme CSS
+ * SpotX Theme Activity Tab Module
  *
  * @package SpotXTheme
  * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU Public License version 2
@@ -9,24 +9,14 @@
  * @link http://www.thinkglobalschool.com/
  *
  */
-?>
 
-.spotx-welcome-module {
-	width: 49%;
+$content = elgg_list_river(array(
+	'limit' => 10,
+	'position' => 'both',
+));
+
+if (!$content) {
+	$content = "<center><strong>" . elgg_echo('spotxtheme:label:noresults') . "</strong></center>";
 }
 
-.spotx-welcome-left-module {
-	float: left;
-}
-
-.spotx-welcome-right-module {
-	float: right;
-}
-
-.spotx-welcome-tabs-module {
-	display: none;
-}
-
-.spotx-welcome-tabs-selected {
-	display: block;
-}
+echo $content;

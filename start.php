@@ -27,4 +27,94 @@ function spotxtheme_init() {
 	elgg_register_simplecache_view('js/spotxtheme/spotx');
 	elgg_register_js('elgg.spotxtheme', $sxt_js);
 	elgg_load_js('elgg.spotxtheme');
+	
+	elgg_extend_view('group/default', 'spotxtheme/group_gallery', 1);
+	
+	// Set up library
+	elgg_register_library('elgg:spotxtheme', elgg_get_plugins_path() . 'spotxtheme/lib/spotx.php');
+	elgg_load_library('elgg:spotxtheme');
+	
+	// Hook to replace regular index
+	if (!elgg_is_logged_in()) {
+		elgg_register_plugin_hook_handler('index','system', 'spotxtheme_index');
+	} else {
+		$item = new ElggMenuItem('welcome', elgg_echo('spotxtheme:label:welcome'), elgg_get_site_url() . 'spotx_welcome');
+		elgg_register_menu_item('site', $item);
+	}
+	
+	// Register 'home' page handler
+	elgg_register_page_handler('spotx_welcome', 'spotxtheme_welcome_page_handler');
+	
+	// Register ECML views
+	elgg_register_plugin_hook_handler('get_views', 'ecml', 'spotxtheme_ecml_views_hook');
+
+	// Override group view for featured groups listing
+	elgg_register_plugin_hook_handler('view', 'group/default', 'spotxtheme_welcome_group_view_handler');
+
+	// Ajax whitelist
+	elgg_register_ajax_view('spotxtheme/modules/groups');
+	elgg_register_ajax_view('spotxtheme/modules/activity');
+	elgg_register_ajax_view('spotxtheme/modules/forums');
+	elgg_register_ajax_view('spotxtheme/modules/blogs');
+}
+
+/**
+ * Plugin hook to display custom spotx landing page
+ *
+ * @param unknown_type $hook
+ * @param unknown_type $type
+ * @param unknown_type $value
+ * @param unknown_type $params
+ * @return unknown
+ */
+function spotxtheme_index($hook, $type, $value, $params) {
+	forward('spotx_welcome');
+}
+
+/**
+ * Welcome page handler
+ */
+function spotxtheme_welcome_page_handler($page) {
+	$title = elgg_echo('spotxtheme:title:welcometo', array(elgg_get_site_entity()->name));
+
+	$params['content'] = elgg_view('spotxtheme/welcome_modules');
+	$params['content'] .= elgg_view('spotxtheme/welcome_tabs');
+
+	// Push context
+	elgg_push_context('welcome');
+
+	$body = elgg_view_layout('one_column', $params);
+
+	echo elgg_view_page($title, $body);	
+	return TRUE;
+}
+
+/**
+ * Parse spotxtheme views for ECML
+ *
+ * @param unknown_type $hook
+ * @param unknown_type $type
+ * @param unknown_type $value
+ * @param unknown_type $params
+ * @return unknown
+ */
+function spotxtheme_welcome_group_view_handler($hook, $type, $value, $params) {
+	if (get_input('spotx_welcome_list') == 1) {
+		return elgg_view('spotxtheme/group', array('entity' => $params['vars']['entity']));
+	}
+	return $value;
+}
+
+/**
+ * Parse spotxtheme views for ECML
+ *
+ * @param unknown_type $hook
+ * @param unknown_type $type
+ * @param unknown_type $value
+ * @param unknown_type $params
+ * @return unknown
+ */
+function spotxtheme_ecml_views_hook($hook, $entity_type, $value, $params) {
+	$value['spotxtheme/welcome_modules'] = elgg_echo('spotxmodules');
+	return $value;
 }
