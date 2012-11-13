@@ -30,3 +30,11 @@
 .spotx-welcome-tabs-selected {
 	display: block;
 }
+
+/** Override logo-bottom **/
+.elgg-main {
+	position: relative;
+	min-height: 360px;
+	padding: 20px 10px 10px 10px;
+	background: url(<?php echo elgg_get_site_url(); ?>mod/spotxtheme/graphics/logo-bottom.png) no-repeat !important;
+}
