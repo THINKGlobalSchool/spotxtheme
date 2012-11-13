@@ -35,6 +35,19 @@ $module_right_content_input = elgg_view('input/longtext', array(
 	'value' => $vars['entity']->module_right_content)
 );
 
+// Right module
+$module_right_alt_title_label = elgg_echo('spotxtheme:label:module_right_alt_title');
+$module_right_alt_title_input = elgg_view('input/text', array(
+	'name' => 'params[module_right_alt_title]', 
+	'value' => $vars['entity']->module_right_alt_title)
+);
+
+$module_right_alt_content_label = elgg_echo('spotxtheme:label:module_right_alt_content');
+$module_right_alt_content_input = elgg_view('input/longtext', array(
+	'name' => 'params[module_right_alt_content]', 
+	'value' => $vars['entity']->module_right_alt_content)
+);
+
 $content = <<<HTML
 	<br />
 	<div>
@@ -52,6 +65,14 @@ $content = <<<HTML
 	<div>
 		<label>$module_right_content_label</label><br />
 		$module_right_content_input
+	</div>
+	<div>
+		<label>$module_right_alt_title_label</label><br />
+		$module_right_alt_title_input
+	</div><br />
+	<div>
+		<label>$module_right_alt_content_label</label><br />
+		$module_right_alt_content_input
 	</div>
 HTML;
 
