@@ -39,6 +39,15 @@
 	background: url(<?php echo elgg_get_site_url(); ?>mod/spotxtheme/graphics/logo-bottom.png) no-repeat !important;
 }
 
+/** Don't override admin **/
+.elgg-page-admin .elgg-main {
+	background: #FFF !important;
+	border: 1px solid #ccc;
+	padding: 20px;
+	position: relative;
+	min-height: 400px;
+}
+
 .elgg-home-right{
 	background:none !important;
 }
