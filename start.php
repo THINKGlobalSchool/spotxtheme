@@ -39,12 +39,12 @@ function spotxtheme_init() {
 	if (!elgg_is_logged_in()) {
 		elgg_register_plugin_hook_handler('index','system', 'spotxtheme_index');
 	} else {
-		$item = new ElggMenuItem('welcome', elgg_echo('spotxtheme:label:welcome'), elgg_get_site_url() . 'spotx_welcome');
+		$item = new ElggMenuItem('welcome', elgg_echo('spotxtheme:label:welcome'), elgg_get_site_url() . 'welcome');
 		elgg_register_menu_item('site', $item);
 	}
 	
 	// Register 'home' page handler
-	elgg_register_page_handler('spotx_welcome', 'spotxtheme_welcome_page_handler');
+	elgg_register_page_handler('welcome', 'spotxtheme_welcome_page_handler');
 	
 	// Register ECML views
 	elgg_register_plugin_hook_handler('get_views', 'ecml', 'spotxtheme_ecml_views_hook');
@@ -69,7 +69,7 @@ function spotxtheme_init() {
  * @return unknown
  */
 function spotxtheme_index($hook, $type, $value, $params) {
-	forward('spotx_welcome');
+	forward('welcome');
 }
 
 /**
