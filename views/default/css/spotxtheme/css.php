@@ -39,14 +39,6 @@
 	background: url(<?php echo elgg_get_site_url(); ?>mod/spotxtheme/graphics/logo-bottom.png) no-repeat !important;
 }
 
-/** Don't override admin **/
-.elgg-page-admin .elgg-main {
-	background: #FFF !important;
-	border: 1px solid #ccc;
-	padding: 20px;
-	position: relative;
-	min-height: 400px;
-}
 
 .elgg-home-right{
 	background:none !important;
@@ -59,4 +51,32 @@
 	width: 400px;
 	margin: 0 0 10px 0;
 	background:url("<?php echo elgg_get_site_url(); ?>mod/spotxtheme/graphics/logo-bottom.png") no-repeat;
+}
+
+/* Don't override admin sidebar */
+.elgg-page-admin .elgg-main {
+	background: #FFF !important;
+	border: 1px solid #ccc;
+	padding: 20px;
+	position: relative;
+	min-height: 400px;
+}
+
+/** Featured Groups **/
+#spotx-welcome-featured-groups .elgg-list {
+	border-top: 0;
+}
+
+#spotx-welcome-featured-groups .elgg-list li {
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+#spotx-welcome-featured-groups .elgg-image-block .elgg-body {
+	margin-top: 2px;
+}
+
+#spotx-welcome-featured-groups .elgg-image-block .elgg-body h3 {
+	margin-top: 1px;
+	font-size: 1.4em;
 }
