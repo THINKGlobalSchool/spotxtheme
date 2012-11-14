@@ -9,6 +9,18 @@
  * @link http://www.thinkglobalschool.com/
  *
  */
+
+/** Conditional CSS **/
+$group_tools_active = elgg_is_active_plugin('group_tools');
+
+if ($group_tools_active) {
+	echo <<<CSS
+.groups-stats {
+	display: none;
+}
+CSS;
+}
+
 ?>
 
 .spotx-welcome-module {
