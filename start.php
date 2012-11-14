@@ -76,6 +76,7 @@ function spotxtheme_index($hook, $type, $value, $params) {
  * Welcome page handler
  */
 function spotxtheme_welcome_page_handler($page) {
+	$_SESSION['last_forward_from'] = elgg_get_site_url();
 	$title = elgg_echo('spotxtheme:title:welcometo', array(elgg_get_site_entity()->name));
 
 	$params['content'] = elgg_view('spotxtheme/welcome_modules');
