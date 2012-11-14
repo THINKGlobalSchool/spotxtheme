@@ -9,7 +9,7 @@
  * @link http://www.thinkglobalschool.com/
  *
  * VIEW OVERRIDES:
- * * List overrides here
+ * * group_tools/group_admins 
  * 
  */
 
