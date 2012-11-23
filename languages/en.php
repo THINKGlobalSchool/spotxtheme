@@ -27,6 +27,9 @@ $english = array(
 	'spotxtheme:label:activeforums' => 'Most Active Forums',
 	'spotxtheme:label:activeblogs' => 'Most Active Blogs',
 	'spotxtheme:label:noresults' => 'No Results',
+	
+	// Report content text
+	'spotxtheme:reportthis' => 'Report as inappropriate',
 );
 
 add_translation('en',$english);
