@@ -51,6 +51,18 @@ function spotxtheme_init() {
 
 	// Override group view for featured groups listing
 	elgg_register_plugin_hook_handler('view', 'group/default', 'spotxtheme_welcome_group_view_handler');
+	
+	// If reported content is active.
+	if (elgg_is_active_plugin('reportedcontent') && elgg_is_logged_in()) {
+		// Register handler to remove the link from the footer
+		elgg_register_plugin_hook_handler('register', 'menu:footer', 'spotxtheme_footer_menu_handler');
+		
+		// Extend main sidebar
+		elgg_extend_view('page/elements/sidebar', 'spotxtheme/reportthis', 9999);
+		
+		// Extend profile owner block
+		elgg_extend_view('profile/owner_block', 'spotxtheme/reportthisprofile', 9999);
+	}
 
 	// Ajax whitelist
 	elgg_register_ajax_view('spotxtheme/modules/groups');
@@ -103,6 +115,27 @@ function spotxtheme_welcome_page_handler($page) {
 function spotxtheme_welcome_group_view_handler($hook, $type, $value, $params) {
 	if (get_input('spotx_welcome_list') == 1) {
 		return elgg_view('spotxtheme/group', array('entity' => $params['vars']['entity']));
+	}
+	return $value;
+}
+
+/**
+ * Modify report this button
+ *
+ * @param unknown_type $hook
+ * @param unknown_type $type
+ * @param unknown_type $value
+ * @param unknown_type $params
+ * @return unknown
+ */
+function spotxtheme_footer_menu_handler($hook, $type, $value, $params) {
+	foreach ($value as $idx => $item) {
+		if ($item->getName() == 'report_this') {
+			unset($value[$idx]);
+			//$item->setSection('default');
+			//$item->setPriority('50');
+			//$item->setLinkClass('spotxtheme-report-this');
+		}
 	}
 	return $value;
 }

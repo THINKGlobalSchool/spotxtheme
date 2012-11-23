@@ -92,3 +92,31 @@ CSS;
 	margin-top: 1px;
 	font-size: 1.4em;
 }
+
+/** Report this link **/
+.spotxtheme-report-this {
+	padding: 0 2px 0 0;
+	bottom: 3px;
+}
+
+.spotxtheme-report-this span.elgg-icon-report-this {
+	background-position: center center;
+	background-color: #ffffff;
+    border-radius: 11px 11px 11px 11px;
+	-moz-border-radius: 11px 11px 11px 11px;
+	-webkit-border-radius: 11px 11px 11px 11px;
+    display: inline-block;
+    height: 16px;
+    padding: 3px;
+    top: 6px;
+    width: 16px;
+	margin-right: 4px;
+	border: 1px solid #91131E;
+}
+
+/** Report this profile container **/
+.report-this-profile {
+	background-color: #EEEEEE;
+	padding: 15px;
+	width: 200px;
+}
