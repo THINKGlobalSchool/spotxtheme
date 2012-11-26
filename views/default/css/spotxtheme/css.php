@@ -97,19 +97,21 @@ CSS;
 .spotxtheme-report-this {
 	padding: 0 2px 0 0;
 	bottom: 3px;
+	font-size: 0.9em;
 }
 
 .spotxtheme-report-this span.elgg-icon-report-this {
 	background-position: center center;
 	background-color: #ffffff;
-    border-radius: 11px 11px 11px 11px;
-	-moz-border-radius: 11px 11px 11px 11px;
-	-webkit-border-radius: 11px 11px 11px 11px;
+    border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
     display: inline-block;
     height: 16px;
     padding: 3px;
     top: 6px;
-    width: 16px;
+	height: 14px;
+    width: 14px;
 	margin-right: 4px;
 	border: 1px solid #91131E;
 }
