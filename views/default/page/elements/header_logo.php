@@ -9,6 +9,8 @@
  * @link http://www.thinkglobalschool.com/
  *
  */
+
+$site_url = elgg_get_site_url();
 ?>
 <!-- 
 <h1>
