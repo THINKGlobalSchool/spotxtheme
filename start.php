@@ -61,7 +61,11 @@ function spotxtheme_init() {
 		elgg_register_plugin_hook_handler('register', 'menu:footer', 'spotxtheme_footer_menu_handler');
 		
 		// Extend main sidebar
-		elgg_extend_view('page/elements/sidebar_alt', 'spotxtheme/reportthis', 9999);
+		if (elgg_get_context() != 'photos') {
+			elgg_extend_view('page/elements/sidebar_alt', 'spotxtheme/reportthis', 9999);
+		} else {
+			elgg_extend_view('page/elements/sidebar', 'spotxtheme/reportthis', 9999);
+		}
 		
 		// Extend profile owner block
 		if (elgg_get_context() == 'profile') {
