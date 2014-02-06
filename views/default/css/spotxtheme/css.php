@@ -24,7 +24,7 @@ CSS;
 ?>
 
 .spotx-welcome-module {
-	width: 49%;
+	width: 48%;
 }
 
 .spotx-welcome-left-module {
@@ -44,35 +44,6 @@ CSS;
 }
 
 /** Override logo **/
-.elgg-main {
-	position: relative;
-	min-height: 360px;
-	padding: 20px 10px 10px 10px;
-	background: url(<?php echo elgg_get_site_url(); ?>mod/spotxtheme/graphics/logo-bottom.png) no-repeat !important;
-}
-
-
-.elgg-home-right{
-	background:none !important;
-}
-
-.elgg-right-sidebar {
-	position: relative;
-	padding: 20px 10px 10px 10px;
-	float: left;
-	width: 400px;
-	margin: 0 0 10px 0;
-	background:url("<?php echo elgg_get_site_url(); ?>mod/spotxtheme/graphics/logo-bottom.png") no-repeat;
-}
-
-/* Don't override admin sidebar */
-.elgg-page-admin .elgg-main {
-	background: #FFF !important;
-	border: 1px solid #ccc;
-	padding: 20px;
-	position: relative;
-	min-height: 400px;
-}
 
 /** Featured Groups **/
 #spotx-welcome-featured-groups .elgg-list {
@@ -114,11 +85,4 @@ CSS;
     width: 14px;
 	margin-right: 4px;
 	border: 1px solid #91131E;
-}
-
-/** Report this profile container **/
-.report-this-profile {
-	background-color: #EEEEEE;
-	padding: 15px;
-	width: 200px;
 }
