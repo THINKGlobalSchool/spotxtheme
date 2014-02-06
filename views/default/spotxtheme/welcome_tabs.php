@@ -84,6 +84,14 @@ $blogs_module = elgg_view('modules/genericmodule', array(
 	'module_class' => 'spotx-welcome-tabs-module',
 ));
 
+echo <<<CSS
+	<style type='text/css'>
+		.elgg-menu-extras {
+			display: none;
+		}
+	</style>
+CSS;
+
 echo $menu;
 echo $groups_module;
 echo $activity_module;

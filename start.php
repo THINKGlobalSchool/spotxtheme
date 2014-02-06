@@ -190,5 +190,6 @@ function spotxtheme_footer_menu_handler($hook, $type, $value, $params) {
  */
 function spotxtheme_ecml_views_hook($hook, $entity_type, $value, $params) {
 	$value['spotxtheme/welcome_modules'] = elgg_echo('spotxmodules');
+	$value['spotxtheme/modules/groups'] = elgg_echo('spotxgroupsmodule');
 	return $value;
 }
