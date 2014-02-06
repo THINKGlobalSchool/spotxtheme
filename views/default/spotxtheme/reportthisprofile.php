@@ -12,4 +12,4 @@
 
 $reportthis = elgg_view('spotxtheme/reportthis');
 
-echo "<div class='report-this-profile'>{$reportthis}</div>";
+echo "<div>{$reportthis}</div>";

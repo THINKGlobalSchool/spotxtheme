@@ -14,7 +14,7 @@ $href = "javascript:elgg.forward('reportedcontent/add'";
 $href .= "+'?address='+encodeURIComponent(location.href)";
 $href .= "+'&title='+encodeURIComponent(document.title));";
 
-echo "<br />" . elgg_view('output/url', array(
+echo elgg_view('output/url', array(
 	'name' => 'report_this',
 	'href' => $href,
 	'text' => elgg_view_icon('report-this') . elgg_echo('spotxtheme:reportthis'),
